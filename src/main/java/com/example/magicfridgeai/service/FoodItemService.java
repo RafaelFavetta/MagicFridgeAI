@@ -5,6 +5,7 @@ import com.example.magicfridgeai.repository.FoodItemRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -24,15 +25,11 @@ public class FoodItemService {
         return foodItemRepository.findAll();
     }
 
-    public FoodItemModel findById(UUID id) {
-        return foodItemRepository.findById(id).orElse(null);
+    public Optional<FoodItemModel> findById(UUID id) {
+        return foodItemRepository.findById(id);
     }
 
-    public FoodItemModel deleteById(UUID id) {
-        FoodItemModel foodItemModel = findById(id);
-        if (foodItemModel != null) {
-            foodItemRepository.deleteById(id);
-        }
-        return foodItemModel;
+    public void deleteById(UUID id) {
+        foodItemRepository.deleteById(id);
     }
 }
