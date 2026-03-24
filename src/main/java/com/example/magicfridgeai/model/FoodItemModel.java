@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -21,5 +21,5 @@ public class FoodItemModel {
     private String name;
     private String category;
     private Integer quantity;
-    private LocalDateTime expirationDate;
+    private LocalDate expirationDate;
 }
