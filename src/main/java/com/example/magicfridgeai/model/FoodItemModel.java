@@ -1,0 +1,25 @@
+package com.example.magicfridgeai.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Entity
+@Table(name = "food_items")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class FoodItemModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+    private String name;
+    private String category;
+    private Integer quantity;
+    private LocalDateTime expirationDate;
+}
