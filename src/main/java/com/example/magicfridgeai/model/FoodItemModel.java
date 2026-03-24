@@ -1,5 +1,6 @@
 package com.example.magicfridgeai.model;
 
+import com.example.magicfridgeai.enums.CategoryEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +20,8 @@ public class FoodItemModel {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
-    private String category;
+    @Enumerated(EnumType.STRING)
+    private CategoryEnum category;
     private Integer quantity;
     private LocalDate expirationDate;
 }

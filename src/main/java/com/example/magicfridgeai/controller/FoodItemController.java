@@ -18,7 +18,7 @@ public class FoodItemController {
         this.foodItemService = foodItemService;
     }
 
-    @PutMapping
+    @PostMapping
     public ResponseEntity<FoodItemModel> save(@RequestBody FoodItemModel foodItemModel) {
         FoodItemModel saved = foodItemService.save(foodItemModel);
         return ResponseEntity.ok(saved);
@@ -36,7 +36,7 @@ public class FoodItemController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<FoodItemModel> update(@RequestBody FoodItemModel foodItemModel, @PathVariable UUID id) {
         return foodItemService.findById(id)
                 .map(existing -> {
