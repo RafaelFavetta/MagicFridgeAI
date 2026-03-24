@@ -32,4 +32,8 @@ public class FoodItemService {
     public void deleteById(UUID id) {
         foodItemRepository.deleteById(id);
     }
+
+    public FoodItemModel update(FoodItemModel foodItemModel) {
+        return foodItemRepository.save(foodItemModel);
+    }
 }
