@@ -15,7 +15,7 @@ public class RecipeController {
 
     private final ChatGptService chatGptService;
 
-    @GetMapping
+    @GetMapping("/generate")
     public Mono<ResponseEntity<String>> generateRecipe() {
         return chatGptService.generateRecipe();
     }

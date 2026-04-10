@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 
-    @Value("${chatgpt.url:https://api.openai.com/v1/responses}")
+    @Value("${chatgpt.url:https://api.openai.com/v1/chat/completions}")
     private String chatGptUrl;
 
     @Bean
